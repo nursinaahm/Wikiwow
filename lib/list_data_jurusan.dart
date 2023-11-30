@@ -32,6 +32,7 @@ class _ListDataState extends State<ListData> {
       setState(() {
         dataJurusan = List<Map<String, String>>.from(data.map((item) {
           return {
+            'foto_jurusan': item['foto_jurusan'] as String,
             'nama': item['nama'] as String,
             'deskripsi': item['deskripsi'] as String,
             'id': item['id'] as String,
@@ -85,6 +86,14 @@ class _ListDataState extends State<ListData> {
                   vertical: 8.0,
                 ),
                 child: ListTile(
+                  leading: Image.asset(
+                    dataJurusan[index][
+                        'foto_jurusan']!, // Replace this with the path to your image asset
+                    width: 50, // Set the desired width
+                    height: 50, // Set the desired height
+                    fit: BoxFit
+                        .cover, // Adjust the fit based on your image requirements
+                  ),
                   title: Text(dataJurusan[index]['nama']!),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,9 +111,12 @@ class _ListDataState extends State<ListData> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => DetailJurusanPage(
-                                      nama: dataJurusan[index]['nama']!,
-                                      deskripsi: dataJurusan[index]
-                                          ['deskripsi']!)));
+                                        nama: dataJurusan[index]['nama']!,
+                                        deskripsi: dataJurusan[index]
+                                            ['deskripsi']!,
+                                        foto_jurusan: dataJurusan[index]
+                                            ['foto_jurusan']!,
+                                      )));
                           // lihatJurusan(context, index);
                         },
                       ),
