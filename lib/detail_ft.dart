@@ -22,7 +22,7 @@ class DetailFTPage extends StatelessWidget {
             Center(
               child: Image.asset(
                 foto, // Ganti dengan path gambar yang sesuai
-                width: 200, // Sesuaikan lebar gambar sesuai kebutuhan Anda
+                width: 400, // Sesuaikan lebar gambar sesuai kebutuhan Anda
                 height: 200, // Sesuaikan tinggi gambar sesuai kebutuhan Anda
                 fit: BoxFit.cover, // Atur jenis tata letak gambar
               ),

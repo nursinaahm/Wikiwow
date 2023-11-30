@@ -8,14 +8,14 @@ import 'package:http/http.dart' as http;
 import 'package:UTS/side_menu.dart';
 // import 'package:UTS/tambah_data.dart';
 
-class InfoFT extends StatefulWidget {
-  const InfoFT({super.key});
+class DataInfoFT extends StatefulWidget {
+  const DataInfoFT({super.key});
 
   @override
-  _InfoFTState createState() => _InfoFTState();
+  _DataInfoFTState createState() => _DataInfoFTState();
 }
 
-class _InfoFTState extends State<InfoFT> {
+class _DataInfoFTState extends State<DataInfoFT> {
   List<Map<String, String>> dataFT = [];
   String url = 'http://localhost/pemmob/wikiwow/teknik.php';
 
@@ -89,7 +89,7 @@ class _InfoFTState extends State<InfoFT> {
                   leading: Image.asset(
                     dataFT[index][
                         'foto']!, // Replace this with the path to your image asset
-                    width: 50, // Set the desired width
+                    width: 100, // Set the desired width
                     height: 50, // Set the desired height
                     fit: BoxFit
                         .cover, // Adjust the fit based on your image requirements

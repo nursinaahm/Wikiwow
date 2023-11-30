@@ -92,7 +92,7 @@ class SideMenu extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const InfoFT(),
+                  builder: (context) => const DataInfoFT(),
                 ),
               );
             },
