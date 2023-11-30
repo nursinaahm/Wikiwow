@@ -1,11 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'package:UTS/detail_jurusan.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:UTS/edit_data.dart';
+// import 'package:UTS/edit_data.dart';
 import 'package:UTS/side_menu.dart';
-import 'package:UTS/tambah_data.dart';
+// import 'package:UTS/tambah_data.dart';
 
 class ListData extends StatefulWidget {
   const ListData({super.key});
@@ -97,7 +98,14 @@ class _ListDataState extends State<ListData> {
                       IconButton(
                         icon: const Icon(Icons.visibility),
                         onPressed: () {
-                          lihatJurusan(context, index);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailJurusanPage(
+                                      nama: dataJurusan[index]['nama']!,
+                                      deskripsi: dataJurusan[index]
+                                          ['deskripsi']!)));
+                          // lihatJurusan(context, index);
                         },
                       ),
                       // IconButton(
@@ -162,54 +170,4 @@ class _ListDataState extends State<ListData> {
   //         EditData(id: id, nama: nama, noTelp: noTelp, email: email),
   //   ));
   // }
-
-  void lihatJurusan(BuildContext context, int index) {
-    final Jurusan = dataJurusan[index];
-    final nama = Jurusan['nama'] as String;
-    final deskripsi = Jurusan['deskripsi'] as String;
-
-    Widget build(BuildContext context) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('Detail Jurusan'),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Card(
-            elevation: 3, // optional: adds a shadow to the card
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Detail Jurusan',
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    'Nama : $nama',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text('Deskripsi : $deskripsi'),
-                  SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          // Add any action you want when the button is pressed
-                        },
-                        child: Text('OK'),
-                      ),
-                    ], // <-- Add this closing bracket
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      );
-    }
-  }
 }
