@@ -20,13 +20,11 @@ class SideMenu extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.teal,
             ),
-            child: Center(
-              child: Text(
-                'Menu Aplikasi',
-                style: TextStyle(
-                  color: Colors.white, // Change the text color
-                  fontSize: 15,
-                ),
+            child: Text(
+              'Menu Aplikasi',
+              style: TextStyle(
+                color: Colors.white, // Change the text color
+                fontSize: 15,
               ),
             ),
           ),
@@ -42,7 +40,7 @@ class SideMenu extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const HomePage(),
+                  builder: (context) => HomePage(),
                 ),
               );
             },
