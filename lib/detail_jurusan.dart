@@ -18,11 +18,11 @@ class DetailJurusanPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Nama : $nama',
+              '$nama',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
-            Text('Deskripsi : $deskripsi'),
+            Text('$deskripsi'),
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
