@@ -16,7 +16,7 @@ class ListData extends StatefulWidget {
 
 class _ListDataState extends State<ListData> {
   List<Map<String, String>> dataJurusan = [];
-  String url = 'http://localhost/pemmob/wikiwow/index.php';
+  String url = 'http://localhost/api-flutter/index.php';
 
   @override
   void initState() {
@@ -162,54 +162,53 @@ class _ListDataState extends State<ListData> {
   //         EditData(id: id, nama: nama, noTelp: noTelp, email: email),
   //   ));
   // }
+void lihatJurusan(BuildContext context, int index) {
+  final Jurusan = dataJurusan[index];
+  final nama = Jurusan['nama'] as String;
+  final deskripsi = Jurusan['deskripsi'] as String;
 
-  void lihatJurusan(BuildContext context, int index) {
-    final Jurusan = dataJurusan[index];
-    final nama = Jurusan['nama'] as String;
-    final deskripsi = Jurusan['deskripsi'] as String;
-
-    Widget build(BuildContext context) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('Detail Jurusan'),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Card(
-            elevation: 3, // optional: adds a shadow to the card
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Detail Jurusan',
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    'Nama : $nama',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text('Deskripsi : $deskripsi'),
-                  SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          // Add any action you want when the button is pressed
-                        },
-                        child: Text('OK'),
-                      ),
-                    ], // <-- Add this closing bracket
-                  ),
-                ],
-              ),
+  Navigator.of(context).push(MaterialPageRoute(
+    builder: (context) => Scaffold(
+      appBar: AppBar(
+        title: Text('Detail Jurusan'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Card(
+          elevation: 3,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Detail Jurusan',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+                SizedBox(height: 16),
+                Text(
+                  'Nama : $nama',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text('Deskripsi : $deskripsi'),
+                SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context); // Close the detail page
+                      },
+                      child: Text('OK'),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),
-      );
-    }
-  }
+      ),
+    ),
+  ));
+}
 }
