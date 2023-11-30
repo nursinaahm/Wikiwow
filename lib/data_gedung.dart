@@ -18,7 +18,7 @@ class DataGedung extends StatefulWidget {
 
 class _DataGedungState extends State<DataGedung> {
   List<Map<String, String>> dataGedung = [];
-  String url = 'http://localhost/api-flutter/gedung.php';
+  String url = 'http://localhost/pemmob/wikiwow/gedung.php';
 
   @override
   void initState() {

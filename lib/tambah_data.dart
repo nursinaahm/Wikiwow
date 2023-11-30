@@ -19,7 +19,7 @@ class _TambahDataState extends State<TambahData> {
   final emailController = TextEditingController();
 
   Future postData(String nama, String noTelp, String email) async {
-    String url = 'http://localhost/api-flutter/index.php';
+    String url = 'http://localhost/pemmob/wikiwow/index.php';
 
     Map<String, String> headers = {'Content-Type': 'application/json'};
     String jsonBody =
