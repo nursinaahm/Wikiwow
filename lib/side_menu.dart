@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:UTS/home_page.dart';
 import 'package:UTS/list_data_jurusan.dart';
+import 'package:UTS/info_ft.dart';
 import 'package:UTS/logout.dart';
 
 class SideMenu extends StatelessWidget {
@@ -55,6 +56,23 @@ class SideMenu extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const ListData(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.person, color: Colors.teal),
+            title: Text(
+              'Fakultas Teknik',
+              style: TextStyle(
+                fontSize: 13,
+              ),
+            ),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const InfoFT(),
                 ),
               );
             },
