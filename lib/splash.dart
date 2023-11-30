@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:UTS/login_page.dart';
+import 'login_page.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -22,31 +22,26 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+  return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(
-              height: 20,
+            Container(
+              child: Image.asset('lib/assets/images/WikiWow.png'),
+              height: 130,
             ),
-            Text(
-              "WikiWow",
-              style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.black,
-              ),
-              textAlign: TextAlign.center,
-            ),
+            Padding(padding: EdgeInsets.only(top: 20.0)),
             Text(
               "@WikiWow_Team",
-              style: TextStyle(
-                fontSize: 14.0,
-                color: Colors.black,
-              ),
-              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 15.0, color: Colors.black),
             ),
+            Padding(padding: EdgeInsets.only(top: 20.0)),
+            CircularProgressIndicator(
+              backgroundColor: Colors.white,
+              strokeWidth: 1,
+            )
           ],
         ),
       ),

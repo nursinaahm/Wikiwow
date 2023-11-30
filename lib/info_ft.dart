@@ -17,7 +17,7 @@ class InfoFT extends StatefulWidget {
 
 class _InfoFTState extends State<InfoFT> {
   List<Map<String, String>> dataFT = [];
-  String url = 'http://localhost/pemmob/wikiwow/teknik.php';
+  String url = 'http://localhost/api-flutter/teknik.php';
 
   @override
   void initState() {

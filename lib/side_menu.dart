@@ -1,3 +1,4 @@
+import 'package:UTS/ormawa_ft.dart';
 import 'package:flutter/material.dart';
 import 'package:UTS/home_page.dart';
 import 'package:UTS/list_data_jurusan.dart';
@@ -73,6 +74,23 @@ class SideMenu extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const InfoFT(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.person, color: Colors.teal),
+            title: Text(
+              'Organisasi Mahasiswa',
+              style: TextStyle(
+                fontSize: 13,
+              ),
+            ),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const OrmawaPage(),
                 ),
               );
             },
