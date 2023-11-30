@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
-class DetailFTPage extends StatelessWidget {
-  final String judul;
+class DetailGedungPage extends StatelessWidget {
+  final String nama;
   final String deskripsi;
-  final String foto;
+  final String foto_gedung;
 
-  const DetailFTPage({required this.judul, required this.deskripsi, required this.foto});
+  const DetailGedungPage(
+      {required this.nama, required this.deskripsi, required this.foto_gedung});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detail Informasi Fakultas Teknik'),
+        title: Text('Detail Gedung'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -21,15 +22,15 @@ class DetailFTPage extends StatelessWidget {
             // Menambahkan gambar dengan menggunakan widget Image
             Center(
               child: Image.asset(
-                foto, // Ganti dengan path gambar yang sesuai
-                width: 400, // Sesuaikan lebar gambar sesuai kebutuhan Anda
+                foto_gedung, // Ganti dengan path gambar yang sesuai
+                width: 200, // Sesuaikan lebar gambar sesuai kebutuhan Anda
                 height: 200, // Sesuaikan tinggi gambar sesuai kebutuhan Anda
                 fit: BoxFit.cover, // Atur jenis tata letak gambar
               ),
             ),
             SizedBox(height: 16),
             Text(
-              '$judul',
+              '$nama',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),

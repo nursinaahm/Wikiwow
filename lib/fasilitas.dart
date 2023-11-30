@@ -1,23 +1,24 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'package:UTS/detail_ft.dart';
+
+import 'package:UTS/detail_fasilitas.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 // import 'package:UTS/edit_data.dart';
 import 'package:UTS/side_menu.dart';
 // import 'package:UTS/tambah_data.dart';
 
-class DataInfoFT extends StatefulWidget {
-  const DataInfoFT({super.key});
+class DataFasilitas extends StatefulWidget {
+  const DataFasilitas({super.key});
 
   @override
-  _DataInfoFTState createState() => _DataInfoFTState();
+  _DataFasilitasState createState() => _DataFasilitasState();
 }
 
-class _DataInfoFTState extends State<DataInfoFT> {
-  List<Map<String, String>> dataFT = [];
-  String url = 'http://localhost/api-flutter/teknik.php';
+class _DataFasilitasState extends State<DataFasilitas> {
+  List<Map<String, String>> dataFasilitas = [];
+  String url = 'http://localhost/pemmob/wikiwow/fasilitas.php';
 
   @override
   void initState() {
@@ -30,10 +31,10 @@ class _DataInfoFTState extends State<DataInfoFT> {
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body);
       setState(() {
-        dataFT = List<Map<String, String>>.from(data.map((item) {
+        dataFasilitas = List<Map<String, String>>.from(data.map((item) {
           return {
-            'foto': item['foto'] as String,
-            'judul': item['judul'] as String,
+            'foto_fasilitas': item['foto_fasilitas'] as String,
+            'nama': item['nama'] as String,
             'deskripsi': item['deskripsi'] as String,
             'id': item['id'] as String,
           };
@@ -57,7 +58,7 @@ class _DataInfoFTState extends State<DataInfoFT> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Informasi Fakultas Teknik'),
+        title: const Text('List Data Fasilitas'),
       ),
       drawer: const SideMenu(),
       body: Column(children: <Widget>[
@@ -77,7 +78,7 @@ class _DataInfoFTState extends State<DataInfoFT> {
         // ),
         Expanded(
           child: ListView.builder(
-            itemCount: dataFT.length,
+            itemCount: dataFasilitas.length,
             itemBuilder: (context, index) {
               return Card(
                 elevation: 3,
@@ -87,19 +88,18 @@ class _DataInfoFTState extends State<DataInfoFT> {
                 ),
                 child: ListTile(
                   leading: Image.asset(
-                    dataFT[index][
-                        'foto']!, // Replace this with the path to your image asset
-                    width: 100, // Set the desired width
+                    dataFasilitas[index][
+                        'foto_fasilitas']!, // Replace this with the path to your image asset
+                    width: 50, // Set the desired width
                     height: 50, // Set the desired height
                     fit: BoxFit
                         .cover, // Adjust the fit based on your image requirements
                   ),
-
-                  title: Text(dataFT[index]['judul']!),
+                  title: Text(dataFasilitas[index]['nama']!),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Judul: ${dataFT[index]['judul']}'),
+                      Text('Nama Fasilitas: ${dataFasilitas[index]['nama']}'),
                     ],
                   ),
                   trailing: Row(
@@ -111,12 +111,13 @@ class _DataInfoFTState extends State<DataInfoFT> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailFTPage(
-                                      judul: dataFT[index]['judul']!,
-                                      deskripsi: dataFT[index]
-                                          ['deskripsi']!,
-                                          foto: dataFT[index]['foto']!
-                                          )));
+                                  builder: (context) => DetailFasilitasPage(
+                                        nama: dataFasilitas[index]['nama']!,
+                                        deskripsi: dataFasilitas[index]
+                                            ['deskripsi']!,
+                                        foto_fasilitas: dataFasilitas[index]
+                                            ['foto_fasilitas']!,
+                                      )));
                           // lihatJurusan(context, index);
                         },
                       ),
