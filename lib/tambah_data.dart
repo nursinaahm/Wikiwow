@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:UTS/list_data.dart';
+import 'package:UTS/list_data_jurusan.dart';
 import 'package:UTS/side_menu.dart';
 
 class TambahData extends StatefulWidget {
@@ -19,7 +19,7 @@ class _TambahDataState extends State<TambahData> {
   final emailController = TextEditingController();
 
   Future postData(String nama, String noTelp, String email) async {
-    String url = 'http://localhost/api-flutter/index.php';
+    String url = 'http://localhost/pemmob/wikiwow/index.php';
 
     Map<String, String> headers = {'Content-Type': 'application/json'};
     String jsonBody =

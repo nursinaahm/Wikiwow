@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 20,
             ),
             Text(
-              "Manajemen Data Kontak",
+              "WikiWow",
               style: TextStyle(
                 fontSize: 18.0,
                 color: Colors.black,
@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
               textAlign: TextAlign.center,
             ),
             Text(
-              "©Nursina Hamdalah_H1D021092",
+              "@WikiWow_Team",
               style: TextStyle(
                 fontSize: 14.0,
                 color: Colors.black,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:UTS/list_data.dart';
+import 'package:UTS/list_data_jurusan.dart';
 import 'package:UTS/side_menu.dart';
 
 class EditData extends StatefulWidget {
@@ -28,7 +28,7 @@ class _EditDataState extends State<EditData> {
   final TextEditingController emailController = TextEditingController();
 
   Future updateData(String nama, String noTelp, String email) async {
-    final baseUrl = 'http://localhost/api-flutter/index.php';
+    final baseUrl = 'http://localhost/pemmob/wikiwow/index.php';
 
     final headers = <String, String>{'Content-Type': 'application/json'};
     final requestBody = <String, dynamic>{

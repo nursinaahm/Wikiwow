@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:UTS/home_page.dart';
-import 'package:UTS/list_data.dart';
+import 'package:UTS/list_data_jurusan.dart';
 import 'package:UTS/logout.dart';
 
 class SideMenu extends StatelessWidget {
@@ -13,7 +13,7 @@ class SideMenu extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.teal, 
+              color: Colors.teal,
             ),
             child: Center(
               child: Text(
@@ -43,9 +43,9 @@ class SideMenu extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.person, color: Colors.teal), 
+            leading: Icon(Icons.person, color: Colors.teal),
             title: Text(
-              'Data Kontak',
+              'Data Jurusan',
               style: TextStyle(
                 fontSize: 13,
               ),
