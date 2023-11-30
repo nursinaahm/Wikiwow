@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 class DetailJurusanPage extends StatelessWidget {
   final String nama;
   final String deskripsi;
+  final String foto_jurusan;
 
-  const DetailJurusanPage({required this.nama, required this.deskripsi});
+  const DetailJurusanPage(
+      {required this.nama,
+      required this.deskripsi,
+      required this.foto_jurusan});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +21,16 @@ class DetailJurusanPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Menambahkan gambar dengan menggunakan widget Image
+            Center(
+              child: Image.asset(
+                foto_jurusan, // Ganti dengan path gambar yang sesuai
+                width: 200, // Sesuaikan lebar gambar sesuai kebutuhan Anda
+                height: 200, // Sesuaikan tinggi gambar sesuai kebutuhan Anda
+                fit: BoxFit.cover, // Atur jenis tata letak gambar
+              ),
+            ),
+            SizedBox(height: 16),
             Text(
               '$nama',
               style: TextStyle(fontWeight: FontWeight.bold),

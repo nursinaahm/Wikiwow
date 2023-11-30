@@ -14,14 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Manajemen Data Kontak',
       theme: ThemeData(
-        primarySwatch:
-            Colors.teal,
+        primarySwatch: Colors.teal,
         fontFamily: GoogleFonts.poppins().fontFamily,
       ),
-      
       home: SplashScreen(),
     );
-
   }
 }
 
