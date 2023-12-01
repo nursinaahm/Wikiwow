@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:UTS/side_menu.dart';
 import 'package:http/http.dart' as http;
 
-class DataInfoFT extends StatefulWidget {
-  const DataInfoFT({super.key});
+class DataInfo extends StatefulWidget {
+  const DataInfo({super.key});
 
   @override
-  _DataInfoFTState createState() => _DataInfoFTState();
+  _DataInfoState createState() => _DataInfoState();
 }
 
-class _DataInfoFTState extends State<DataInfoFT> {
-  List<Map<String, String>> dataFT = [];
-  String url = 'http://localhost/pemmbon/wikiwow/teknik.php';
+class _DataInfoState extends State<DataInfo> {
+  List<Map<String, String>> dataInfo = [];
+  String url = 'http://localhost/pemmob/wikiwow/teknik.php';
 
   @override
   void initState() {
@@ -27,10 +27,10 @@ class _DataInfoFTState extends State<DataInfoFT> {
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body);
       setState(() {
-        dataFT = List<Map<String, String>>.from(data.map((item) {
+        dataInfo = List<Map<String, String>>.from(data.map((item) {
           return {
             'foto': item['foto'] as String,
-            'judul': item['judul'] as String,
+            'nama': item['nama'] as String,
             'deskripsi': item['deskripsi'] as String,
             'id': item['id'] as String,
           };
@@ -58,7 +58,7 @@ class _DataInfoFTState extends State<DataInfoFT> {
             const SizedBox(height: 16),
             Expanded(
               child: ListView.separated(
-                itemCount: dataFT.length,
+                itemCount: dataInfo.length,
                 separatorBuilder: (BuildContext context, int index) =>
                     const Divider(),
                 itemBuilder: (context, index) {
@@ -66,7 +66,7 @@ class _DataInfoFTState extends State<DataInfoFT> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        dataFT[index]['judul']!,
+                        dataInfo[index]['nama']!,
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w900,
@@ -74,14 +74,14 @@ class _DataInfoFTState extends State<DataInfoFT> {
                       ),
                       const SizedBox(height: 8),
                       Image.asset(
-                        dataFT[index]['foto']!,
+                        dataInfo[index]['foto']!,
                         width: screenWidth, // Set lebar sesuai lebar layar
                         height: 200, // Sesuaikan tinggi yang diinginkan
                         fit: BoxFit.cover,
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        '${dataFT[index]['deskripsi']!}',
+                        '${dataInfo[index]['deskripsi']!}',
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           fontSize: 13,

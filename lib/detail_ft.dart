@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class DetailFTPage extends StatelessWidget {
-  final String judul;
+class DetailFtPage extends StatelessWidget {
+  final String nama;
   final String deskripsi;
   final String foto;
 
-  const DetailFTPage({required this.judul, required this.deskripsi, required this.foto});
+  const DetailFtPage(
+      {required this.nama, required this.deskripsi, required this.foto});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class DetailFTPage extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              '$judul',
+              '$nama',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),

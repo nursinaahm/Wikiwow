@@ -34,7 +34,7 @@ class DetailGedungPage extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
-            Text('$deskripsi'),
+            Text('$deskripsi', textAlign: TextAlign.justify),
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {

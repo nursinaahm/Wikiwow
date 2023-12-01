@@ -8,7 +8,7 @@ class OrmawaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('List Data Jurusan'),
+        title: const Text('Data Organisasi'),
       ),
       drawer: const SideMenu(),
       body: SingleChildScrollView(
@@ -60,6 +60,12 @@ class OrmawaPage extends StatelessWidget {
                   buildOrganisasiCard("HMIF", "Himpunan Mahasiswa Informatika"),
                   buildOrganisasiCard(
                       "HMTG", "Himpunan Mahasiswa Teknik Geologi"),
+                  buildOrganisasiCard(
+                      "HMTI", "Himpunan Mahasiswa Teknik Industri"),
+                  buildOrganisasiCard(
+                      "HMTS", "Himpunan Mahasiswa Teknik Sipil"),
+                  buildOrganisasiCard(
+                      "HMTE", "Himpunan Mahasiswa Teknik Elektro"),
                   // Add more cards as needed
                 ],
               ),

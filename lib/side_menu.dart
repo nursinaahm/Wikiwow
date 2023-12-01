@@ -48,6 +48,23 @@ class SideMenu extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.person, color: Colors.teal),
             title: Text(
+              'Fakultas Teknik',
+              style: TextStyle(
+                fontSize: 13,
+              ),
+            ),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const DataInfo(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.person, color: Colors.teal),
+            title: Text(
               'Data Jurusan',
               style: TextStyle(
                 fontSize: 13,
@@ -75,23 +92,6 @@ class SideMenu extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const DataGedung(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.person, color: Colors.teal),
-            title: Text(
-              'Fakultas Teknik',
-              style: TextStyle(
-                fontSize: 13,
-              ),
-            ),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const DataInfoFT(),
                 ),
               );
             },

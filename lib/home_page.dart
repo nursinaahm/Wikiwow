@@ -10,7 +10,13 @@ class HomePage extends StatelessWidget {
   final List<Map<String, dynamic>> menuItems = [
     {
       'icon': Icons.person,
-      'item': 'List Data',
+      'item': 'Informasi FT',
+      'page': DataInfo(),
+      'color': Colors.teal,
+    },
+    {
+      'icon': Icons.person,
+      'item': 'Data Jurusan',
       'page': ListData(),
       'color': Colors.teal,
     },
@@ -21,12 +27,6 @@ class HomePage extends StatelessWidget {
       'color': Colors.teal,
     },
     {
-      'icon': Icons.person,
-      'item': 'Data Info FT',
-      'page': DataInfoFT(),
-      'color': Colors.teal,
-    },
-    {
       'icon': Icons.attractions_rounded,
       'item': 'Data Fasilitas',
       'page': DataFasilitas(),
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
     },
     {
       'icon': Icons.person,
-      'item': 'Ormawa Page',
+      'item': 'Data Organisasi',
       'page': OrmawaPage(),
       'color': Colors.teal,
     },
@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home'),
       ),
-      drawer: const SideMenu(),
+     drawer: const SideMenu(),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
