@@ -17,7 +17,8 @@ class ListData extends StatefulWidget {
 
 class _ListDataState extends State<ListData> {
   List<Map<String, String>> dataJurusan = [];
-  String url = 'http://localhost/pemmob/wikiwow/index.php';
+  // String url = 'https://wikiwow-pemob.000webhostapp.com/index.php';
+  String url = 'https://wikiwow-pemob.000webhostapp.com/';
 
   @override
   void initState() {

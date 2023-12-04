@@ -18,7 +18,7 @@ class DataFasilitas extends StatefulWidget {
 
 class _DataFasilitasState extends State<DataFasilitas> {
   List<Map<String, String>> dataFasilitas = [];
-  String url = 'http://localhost/pemmob/wikiwow/fasilitas.php';
+  String url = 'https://wikiwow-pemob.000webhostapp.com/fasilitas.php';
 
   @override
   void initState() {

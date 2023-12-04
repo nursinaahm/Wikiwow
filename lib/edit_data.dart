@@ -28,7 +28,7 @@ class _EditDataState extends State<EditData> {
   final TextEditingController emailController = TextEditingController();
 
   Future updateData(String nama, String noTelp, String email) async {
-    final baseUrl = 'http://localhost/pemmob/wikiwow/index.php';
+    final baseUrl = 'https://wikiwow-pemob.000webhostapp.com/index.php';
 
     final headers = <String, String>{'Content-Type': 'application/json'};
     final requestBody = <String, dynamic>{

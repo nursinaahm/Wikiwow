@@ -14,7 +14,7 @@ class DataInfo extends StatefulWidget {
 
 class _DataInfoState extends State<DataInfo> {
   List<Map<String, String>> dataInfo = [];
-  String url = 'http://localhost/pemmob/wikiwow/teknik.php';
+  String url = 'https://wikiwow-pemob.000webhostapp.com/teknik.php';
 
   @override
   void initState() {

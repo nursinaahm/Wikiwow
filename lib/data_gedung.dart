@@ -18,7 +18,7 @@ class DataGedung extends StatefulWidget {
 
 class _DataGedungState extends State<DataGedung> {
   List<Map<String, String>> dataGedung = [];
-  String url = 'http://localhost/pemmob/wikiwow/gedung.php';
+  String url = 'https://wikiwow-pemob.000webhostapp.com/gedung.php';
 
   @override
   void initState() {
